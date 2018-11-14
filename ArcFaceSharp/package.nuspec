@@ -1,26 +1,27 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <package>
   <metadata>
     <!--*-->
-    <id>$id$</id>
+    <id>ArcFaceSharp</id>
     <!--*-->
-    <version>$version$</version>
-    <title></title>
+    <version>1.0.0</version>
+    <title>ArcFaceSharp</title>
     <!--*-->
-    <authors>$author$</authors>
-    <owners>$author$</owners>
-<!--
-    <licenseUrl></licenseUrl>
-    <projectUrl></projectUrl>
-    <iconUrl></iconUrl>
--->
+    <authors>Thxzzzzz</authors>
+    <owners>Thxzzzzz</owners>
+    <licenseUrl>https://github.com/Thxzzzzz/ArcFaceSharp/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Thxzzzzz/ArcFaceSharp</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/Thxzzzzz/ArcFaceSharp/master/icon.jpg</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <!--*-->
-    <description>$description$</description>
+    <description>ArcFace 2.0 SDK C# Wrapper</description>
     <!--*-->
-    <releaseNotes> </releaseNotes>
-    <copyright>$copyright$</copyright>
-    <tags> </tags>
+    <releaseNotes>v1.0.0</releaseNotes>
+    <copyright>Thxzzzzz Copyright ©  2018</copyright>
+    <tags>ArcFace
+      ArcSoft
+      FaceRecognition
+    </tags>
     <dependencies>
       <!--
       <dependency id="SampleDependency" version="1.0" />

@@ -1,12 +1,22 @@
 ### ArcFaceSharp
+
+[![NuGet](https://img.shields.io/badge/nuget-1.0.0-green.svg)](https://www.nuget.org/packages/ArcFaceSharp/)
 ArcFaceSharp 是 ArcSoft 虹软 ArcFace 2.0 SDK （http://ai.arcsoft.com.cn/product/arcface.html） 的一个 C# 封装库，为方便进行 C# 开发而封装。欢迎 Start & Fork。
 
 ### 使用
-导入ArcFaceSharp 后，将自己申请到的 ArcFace2.0 SDK 的 dll 文件 （libarcsoft_face.dll 和 libarcsoft_face_engine.dll）放在程序的运行目录下。
+
+在 Nuget 搜索 ArcFaceSharp 安装。
+
+```powershell
+PM> Install-Package ArcFaceSharp -Version 1.0.0
+```
+
+或者下载dll导入。
+
+导入 ArcFaceSharp 后，将自己申请到的 ArcFace2.0 SDK 的 dll 文件 （libarcsoft_face.dll 和 libarcsoft_face_engine.dll）放在程序的运行目录下。
 
 接口调用的流程可参考官方文档的流程图（http://ai.arcsoft.com.cn/manual/arcface_windows_guideV2.html 2.1.5调用流程）
-
-- ![avatar](/lct.jpg)
+- ![lct](/lct.jpg)
 
 ##### 主要 API
 
@@ -188,3 +198,8 @@ AsfFaceFeature asfFaceFeature = arcFace.FaceFeatureExtract(imageData, ref asfSin
 
 > C#人脸检测与动态人脸识别显示坐标 视频人脸识别WINFORM - ArcFace - 虹软人工智能引擎开发者论坛 - Powered by Discuz!
 > https://ai.arcsoft.com.cn/bbs/forum.php?mod=viewthread&tid=648&extra=page%3D1
+> 
+#### 另外
+欢迎打赏哈哈~
+
+<img src="/alipay.jpg" width="260"  />
