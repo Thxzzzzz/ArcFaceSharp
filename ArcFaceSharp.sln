@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcFaceSharp", "ArcFaceSharp\ArcFaceSharp.csproj", "{F54913C5-C8F4-4934-A14B-1646EE507D6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArcFaceSharpUnitTest", "ArcFaceSharpUnitTest\ArcFaceSharpUnitTest.csproj", "{CA0FEA91-DB5C-4B46-B315-11E1DFB3CD7F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F54913C5-C8F4-4934-A14B-1646EE507D6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F54913C5-C8F4-4934-A14B-1646EE507D6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F54913C5-C8F4-4934-A14B-1646EE507D6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F54913C5-C8F4-4934-A14B-1646EE507D6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA0FEA91-DB5C-4B46-B315-11E1DFB3CD7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA0FEA91-DB5C-4B46-B315-11E1DFB3CD7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA0FEA91-DB5C-4B46-B315-11E1DFB3CD7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA0FEA91-DB5C-4B46-B315-11E1DFB3CD7F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F1B95C7-A5BD-4735-AF95-5796FB428645}
+	EndGlobalSection
+EndGlobal
