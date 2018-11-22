@@ -17,19 +17,23 @@ using System.Runtime.InteropServices;
 #endregion
 namespace ArcFaceSharp.Image
 {
+    /// <summary>
+    /// 用来转换成ImageData
+    /// </summary>
     public  class ImageDataConverter
     {
         [DllImport("kernel32.dll")]
-        public static extern void CopyMemory(IntPtr destination, IntPtr source, int length);
+        private static extern void CopyMemory(IntPtr destination, IntPtr source, int length);
 
         /// <summary>
         /// Bitmap转ImageData同时将宽度不为4的倍数的图像进行调整，注意ImageData在用完之后要用Dispose释放掉
         /// </summary>
         /// <param name="bitmap"></param>
+        /// <param name="pixelFormat">图像格式 默认PixelFormat.Format24bppRgb</param>
         /// <returns></returns>
-        public static ImageData ConvertToImageData(Bitmap bitmap)
+        public static ImageData ConvertToImageData(Bitmap bitmap,PixelFormat pixelFormat = PixelFormat.Format24bppRgb)
         {
-            BitmapData bmpData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadOnly, PixelFormat.Format24bppRgb);
+            BitmapData bmpData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadOnly, pixelFormat);
             int width = (bitmap.Width + 3) / 4 * 4;
             int bytesCount = bmpData.Height * width * 3;
             IntPtr pImageData = Marshal.AllocCoTaskMem(bytesCount);

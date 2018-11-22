@@ -69,7 +69,7 @@ namespace ArcFaceSharp
         #region DllImport
 
         [DllImport("kernel32.dll")]
-        public static extern void CopyMemory(IntPtr Destination, IntPtr Source, int Length);
+        private static extern void CopyMemory(IntPtr Destination, IntPtr Source, int Length);
 
         #endregion
 
@@ -85,6 +85,7 @@ namespace ArcFaceSharp
         /// <param name="detectFaceOrientPriority">检测脸部角度的优先值 默认仅0度</param>
         /// <param name="detectFaceMaxNum">最大检测人脸的个数[1,50] 默认25</param>
         /// <param name="detectFaceScaleVal">数值化的最小人脸尺寸，视频[2,16]/图片[2,32]，推荐值16 默认16</param>
+        /// <exception cref="ResultCodeException"> 当返回值不为成功时会引发异常</exception>
         public ArcFaceCore(string appId, string sdkKey, uint detectMode, uint combinedMask,
             DetectionOrientPriority detectFaceOrientPriority = DetectionOrientPriority.ASF_OP_0_ONLY, int detectFaceMaxNum = 25, int detectFaceScaleVal = 16)
         {
@@ -111,6 +112,7 @@ namespace ArcFaceSharp
         /// <param name="detectFaceOrientPriority">检测脸部角度的优先值 默认仅0度</param>
         /// <param name="detectFaceMaxNum">最大检测人脸的个数[1,50] 默认25</param>
         /// <param name="detectFaceScaleVal">数值化的最小人脸尺寸，视频[2,16]/图片[2,32]，推荐值16 默认16</param>
+        /// <exception cref="ResultCodeException"> 当返回值不为成功时会引发异常</exception>
         private void Init(string appId, string sdkKey, uint detectMode, uint combinedMask, 
             int detectFaceOrientPriority = (int)DetectionOrientPriority.ASF_OP_0_ONLY, int detectFaceMaxNum = 25, int detectFaceScaleVal = 16)
         {
@@ -162,6 +164,7 @@ namespace ArcFaceSharp
         /// </summary>
         /// <param name="bitmap"></param>
         /// <param name="deepCopy">返回结果是否进行深拷贝,默认为true,若设置为false则每次调用会覆盖上一次的结果(内存覆盖)</param>
+        /// <exception cref="ResultCodeException"> 当返回值不为成功时会引发异常</exception>
         /// <returns></returns>
         public MultiFaceModel FaceDetection(Bitmap bitmap, bool deepCopy = true)
         {
@@ -178,6 +181,7 @@ namespace ArcFaceSharp
         /// </summary>
         /// <param name="imgData">图像数据 可用 ImageDataConverter 转换</param>
         /// <param name="deepCopy">返回结果是否进行深拷贝,默认为true,若设置为false则每次调用会覆盖上一次的结果(内存覆盖)</param>
+        /// <exception cref="ResultCodeException"> 当返回值不为成功时会引发异常</exception>
         /// <returns></returns>
         public MultiFaceModel FaceDetection(ImageData imgData, bool deepCopy = true)
         {
@@ -193,6 +197,7 @@ namespace ArcFaceSharp
         /// <param name="format">颜色空间格式</param>
         /// <param name="pImageData">图片数据</param>
         /// <param name="deepCopy">返回结果是否进行深拷贝,默认为true,若设置为false则每次调用会覆盖上一次的结果(内存覆盖)</param>
+        /// <exception cref="ResultCodeException"> 当返回值不为成功时会引发异常</exception>
         /// <returns></returns>
         public MultiFaceModel FaceDetection(int width, int height, int format, IntPtr pImageData ,bool deepCopy = true)
         {
@@ -232,6 +237,7 @@ namespace ArcFaceSharp
         /// <param name="bitmap"></param>
         /// <param name="faceInfo">单张人脸位置和角度信息</param>
         /// <param name="deepCopy">返回结果是否进行深拷贝,默认为true,若设置为false则每次调用会覆盖上一次的结果(内存覆盖)</param>
+        /// <exception cref="ResultCodeException"> 当返回值不为成功时会引发异常</exception>
         /// <returns>人脸特征信息</returns>
         public AsfFaceFeature FaceFeatureExtract(Bitmap bitmap, ref AsfSingleFaceInfo faceInfo, bool deepCopy = true)
         {
@@ -250,6 +256,7 @@ namespace ArcFaceSharp
         /// <param name="imgData">图像数据 可用 ImageDataConverter 转换</param>
         /// <param name="faceInfo">单张人脸位置和角度信息</param>
         /// <param name="deepCopy">返回结果是否进行深拷贝,默认为true,若设置为false则每次调用会覆盖上一次的结果(内存覆盖)</param>
+        /// <exception cref="ResultCodeException"> 当返回值不为成功时会引发异常</exception>
         /// <returns>人脸特征信息</returns>
         public AsfFaceFeature FaceFeatureExtract(ImageData imgData, ref AsfSingleFaceInfo faceInfo, bool deepCopy = true)
         {
@@ -266,6 +273,7 @@ namespace ArcFaceSharp
         /// <param name="pImageData">图片数据</param>
         /// <param name="faceInfo">单张人脸位置和角度信息</param>
         /// <param name="deepCopy">返回结果是否进行深拷贝,默认为true,若设置为false则每次调用会覆盖上一次的结果(内存覆盖)</param>
+        /// <exception cref="ResultCodeException"> 当返回值不为成功时会引发异常</exception>
         /// <returns>人脸特征信息</returns>
         public AsfFaceFeature FaceFeatureExtract(int width, int height, int format, IntPtr pImageData, ref AsfSingleFaceInfo faceInfo,bool deepCopy = true)
         {
@@ -294,6 +302,7 @@ namespace ArcFaceSharp
         /// </summary>
         /// <param name="faceFeature1">待比对的人脸特征</param>
         /// <param name="faceFeature2">待比对的人脸特征</param>
+        /// <exception cref="ResultCodeException"> 当返回值不为成功时会引发异常</exception>
         /// <returns>人脸对结果值，为 0-1 之间的浮点数</returns>
         public float FaceCompare(AsfFaceFeature faceFeature1,AsfFaceFeature faceFeature2)
         {
@@ -372,12 +381,17 @@ namespace ArcFaceSharp
         /// <summary>
         /// 获取年龄信息
         /// </summary>
+        /// <exception cref="ResultCodeException"> 当返回值不为成功时会引发异常</exception>
         /// <returns>年龄信息列表</returns>
         public List<int> GetAge()
         {
             AsfAgeInfo ageInfo = new AsfAgeInfo();
-            
-            ArcFaceApi.ASFGetAge(EngineHandle, ref ageInfo);
+
+            ResultCode result = (ResultCode)ArcFaceApi.ASFGetAge(EngineHandle, ref ageInfo);
+            if (result != ResultCode.成功)
+            {
+                throw new ResultCodeException(result);
+            }
             return ageInfo.ageArray.ToStructArray<int>(ageInfo.num).ToList(); 
         }
 
@@ -385,6 +399,7 @@ namespace ArcFaceSharp
         /// <summary>
         /// 获取性别信息
         /// </summary>
+        /// <exception cref="ResultCodeException"> 当返回值不为成功时会引发异常</exception>
         /// <returns>性别信息列表 0男，1女，-1未知</returns>
         public List<int> GetGender()
         {
@@ -400,6 +415,7 @@ namespace ArcFaceSharp
         /// <summary>
         /// 获取3D角度信息
         /// </summary>
+        /// <exception cref="ResultCodeException"> 当返回值不为成功时会引发异常</exception>
         /// <returns>3D角度信息列表</returns>
         public List<Face3DAngleModel> GetFace3DAngle()
         {
