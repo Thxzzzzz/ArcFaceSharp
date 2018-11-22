@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using ArcFaceSharp;
 using ArcFaceSharp.ArcFace;
+using ArcFaceSharp.Exceptions;
 using ArcFaceSharp.Image;
 using ArcFaceSharp.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

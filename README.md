@@ -1,6 +1,6 @@
 ### ArcFaceSharp
 
-[![NuGet](https://img.shields.io/badge/nuget-1.0.0-green.svg)](https://www.nuget.org/packages/ArcFaceSharp/)
+[![NuGet](https://img.shields.io/badge/nuget-1.0.2-green.svg)](https://www.nuget.org/packages/ArcFaceSharp/)
 
 
 
@@ -11,7 +11,7 @@ ArcFaceSharp 是 ArcSoft 虹软 ArcFace 2.0 SDK （http://ai.arcsoft.com.cn/prod
 在 Nuget 搜索 ArcFaceSharp 安装。
 
 ```powershell
-PM> Install-Package ArcFaceSharp -Version 1.0.0
+PM> Install-Package ArcFaceSharp -Version 1.0.2
 ```
 
 或者下载dll导入。
@@ -55,7 +55,7 @@ MultiFaceModel multiFaceModel = arcFaceCore.FaceDetection(imageData);
 
 - 人脸信息检测（年龄/性别/人脸3D角度）最多支持4张人脸信息检测，超过部分返回未知
 ```C#
-// 人脸信息检测 先调用这个接口才能获取一下三个信息
+// 人脸信息检测 先调用这个接口才能获取以下三个信息
 arcFaceCore.FaceProcess(imageData,multiFaceModel);
 //获取年龄信息
 List<int> ageList = arcFaceCore.GetAge();
@@ -77,6 +77,22 @@ AsfFaceFeature asfFaceFeature = arcFace.FaceFeatureExtract(imageData, ref asfSin
 ```C#
  float result = arcFace.FaceCompare(asfFaceFeature1, asfFaceFeature2);
 ```
+
+- 异常捕获
+
+  以人脸特征提取为例,当借口返回值不为 0(成功)时，则会抛出 ResultCodeException 异常。
+
+ ```C#
+try
+{
+	AsfFaceFeature asfFaceFeature = arcFace.FaceFeatureExtract(imageData, ref asfSingleFaceInfo);
+}
+catch (ResultCodeException e)
+{
+    Console.WriteLine(e.ResultCode);
+    throw;
+}
+ ```
 
 
 
@@ -163,13 +179,13 @@ AsfFaceFeature asfFaceFeature = arcFace.FaceFeatureExtract(imageData, ref asfSin
 
             ImageData faceData3 = ImageDataConverter.ConvertToImageData(face3);
 
-            // 检测第二张图片中的人脸
+            // 检测第三张图片中的人脸
             MultiFaceModel multiFace3 = arcFace.FaceDetection(faceData3);
 
-            // 取第二张图片中返回的第一个人脸信息
+            // 取第三张图片中返回的第一个人脸信息
             AsfSingleFaceInfo faceInfo3 = multiFace3.FaceInfoList.First();
 
-            // 提第二张图片中返回的第一个人脸的特征
+            // 提第三张图片中返回的第一个人脸的特征
             AsfFaceFeature faceFeature3 = arcFace.FaceFeatureExtract(faceData3, ref faceInfo3);
 
             // face1 face3 人脸对比，将会返回一个 0-1 之间的浮点数值
@@ -202,7 +218,14 @@ AsfFaceFeature asfFaceFeature = arcFace.FaceFeatureExtract(imageData, ref asfSin
 > C#人脸检测与动态人脸识别显示坐标 视频人脸识别WINFORM - ArcFace - 虹软人工智能引擎开发者论坛 - Powered by Discuz!
 > https://ai.arcsoft.com.cn/bbs/forum.php?mod=viewthread&tid=648&extra=page%3D1
 > 
+
+
+
+
+
+
 #### 另外
+
 欢迎打赏哈哈~
 
-<img src="/alipay.jpg" width="260"  />
+<img src="/alipay.jpg" width="200"  />
