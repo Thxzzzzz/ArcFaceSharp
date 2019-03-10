@@ -80,7 +80,7 @@ AsfFaceFeature asfFaceFeature = arcFace.FaceFeatureExtract(imageData, ref asfSin
 
 - 异常捕获
 
-  以人脸特征提取为例,当借口返回值不为 0(成功)时，则会抛出 ResultCodeException 异常。
+  以人脸特征提取为例,当接口返回值不为 0(成功)时，则会抛出 ResultCodeException 异常。
 
  ```C#
 try
@@ -220,12 +220,3 @@ catch (ResultCodeException e)
 > 
 
 
-
-
-
-
-#### 另外
-
-欢迎打赏哈哈~
-
-<img src="/alipay.jpg" width="200"  />
