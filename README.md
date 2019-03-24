@@ -1,6 +1,6 @@
 ### ArcFaceSharp
 
-[![NuGet](https://img.shields.io/badge/nuget-1.0.2-green.svg)](https://www.nuget.org/packages/ArcFaceSharp/)
+[![NuGet](https://img.shields.io/badge/nuget-1.0.3-green.svg)](https://www.nuget.org/packages/ArcFaceSharp/)
 
 
 
@@ -11,7 +11,7 @@ ArcFaceSharp 是 ArcSoft 虹软 ArcFace 2.0 SDK （http://ai.arcsoft.com.cn/prod
 在 Nuget 搜索 ArcFaceSharp 安装。
 
 ```powershell
-PM> Install-Package ArcFaceSharp -Version 1.0.2
+PM> Install-Package ArcFaceSharp -Version 1.0.3
 ```
 
 或者下载dll导入。

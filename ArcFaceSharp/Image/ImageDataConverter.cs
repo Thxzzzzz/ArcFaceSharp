@@ -38,10 +38,17 @@ namespace ArcFaceSharp.Image
             int bytesCount = bmpData.Height * width * 3;
             IntPtr pImageData = Marshal.AllocCoTaskMem(bytesCount);
             if (width == bitmap.Width)
+            {
                 CopyMemory(pImageData, bmpData.Scan0, bytesCount);
+
+            }
             else
-                for (int i = 0; i < bitmap.Width; i++)
+            {
+                for (int i = 0; i < bitmap.Height; i++)
+                {
                     CopyMemory(IntPtr.Add(pImageData, i * width * 3), IntPtr.Add(bmpData.Scan0, i * bmpData.Stride), bmpData.Stride);
+                }
+            }
             bitmap.UnlockBits(bmpData);
             return new ImageData(width, bitmap.Height, pImageData);
         }

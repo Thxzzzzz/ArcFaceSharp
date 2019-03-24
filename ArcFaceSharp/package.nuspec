@@ -4,7 +4,7 @@
     <!--*-->
     <id>ArcFaceSharp</id>
     <!--*-->
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <title>ArcFaceSharp</title>
     <!--*-->
     <authors>Thxzzzzz</authors>
@@ -16,7 +16,7 @@
     <!--*-->
     <description>ArcFace 2.0 SDK C# Wrapper</description>
     <!--*-->
-    <releaseNotes>v1.0.2</releaseNotes>
+    <releaseNotes>v1.0.3</releaseNotes>
     <copyright>Thxzzzzz Copyright ©  2018</copyright>
     <tags>ArcFace
       ArcSoft
