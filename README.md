@@ -25,8 +25,9 @@ PM> Install-Package ArcFaceSharp -Version 1.0.3
 测试环境center os 7,netcore-sdk-5.1
 
 下载编译netcore分支，将自己申请到的 ArcFace2.0 SDK 的 so 文件（libarcsoft_face.so 和 libarcsoft_face_engine.so）拷到/lib64目录下
-
+```
 运行lld libarcsoft_face_engine.so 查看依赖
+```
 
   库依赖 GLIBC 2.17 及以上
   
