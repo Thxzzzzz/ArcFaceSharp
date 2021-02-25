@@ -21,6 +21,14 @@ PM> Install-Package ArcFaceSharp -Version 1.0.3
 接口调用的流程可参考官方文档的流程图（http://ai.arcsoft.com.cn/manual/arcface_windows_guideV2.html 2.1.5调用流程）
 - ![lct](/lct.jpg)
 
+### Linux版本 
+ 测试环境center os 7,netcore-sdk-5.1
+下载编译netcore分支，将自己申请到的 ArcFace2.0 SDK 的 so 文件（libarcsoft_face.so 和 libarcsoft_face_engine.so）拷到/lib64目录下
+运行lld libarcsoft_face_engine.so 查看依赖
+库依赖 GLIBC 2.17 及以上
+库依赖 GLIBCXX 3.4.19 及以上
+编译器 GCC 4.8.2 及以上
+
 ##### 主要 API
 
    具体参数和含义可以自行查看方法的注释
